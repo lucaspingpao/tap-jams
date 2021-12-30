@@ -1,0 +1,4 @@
+Flask==1.1.2
+pydub==0.23.1
+thinkx==1.1.3
+gunicorn

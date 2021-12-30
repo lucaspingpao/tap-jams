@@ -1,0 +1,21 @@
+h1 {
+    color: green;
+}
+
+h6 {
+    color: red;
+    font-style: italic;
+}
+
+ul {
+    text-align: center;
+    display: inline-block;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#sounds {
+    max-width: 100px;
+}

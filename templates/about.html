@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block main %}
+
+<hr cclass="shadow p-3 mb-5 bg-white rounded"/>  
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-1">PolySymph</h1>
+            <p class="lead">Music composition and experimentation reimagined.</p>
+            <button type="button" class="btn btn-outline-success"><a class="text-success" href="/#harmony">Harmony.</a></button>
+            <button type="button" class="btn btn-outline-success"><a class="text-success" href="/#melody">Melody.</a></button>
+            <button type="button" class="btn btn-outline-success"><a class="text-success" href="/#composition">Composition.</a></button>
+        </div>
+    </div>
+<hr class="shadow p-3 mb-5 bg-white rounded"/>
+
+<div class="container">
+    <h4><i>PolySymph </i> is a revolutionary music composition and experimentation app, designed to replicate the quintessential one-man-band experience necessary for every aspiring modern musician.</h4>
+    <br/>
+    <h4><i>PolySymph </i><u>can implement the following features</u><i style="color:red; font-style:">   (Upcoming features are marked in *red):</i></h4>
+    <br/>
+
+    <ul>
+        <li>Compositional Tool - reimagination of the way we structure our music compositional process</li>
+        <li>Music Theorist - synthesizes simple major/minor chords automatically to keep you in the flow</li>
+        <li>Piano - interactive realistic interface display that can output sounds in real time</li>
+        <li style="color:red; font-style: italic">*Synthesizer - generate an original library of sounds that can map to the keyboard</li>
+        <li style="color:red; font-style: italic">*Other Instruments - clean visual graphics will display other instrument families</li>
+    </ul>
+</div>
+
+<hr class="shadow p-3 mb-5 bg-white rounded"/>
+
+<div class="container">
+    <h4>All sounds synthesized through digital signal processing with the Python packages <a href="http://pydub.com">pydub</a> and <a href="https://github.com/AllenDowney/ThinkDSP">thinkdsp.</a></h4>
+    <h4>Please watch the following <a href="https://youtu.be/Lcgwm4ci7l4">video</a> for further exploration into my Python-based Synthesizer.</h4>
+    <br/>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Lcgwm4ci7l4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br/>
+</div>
+
+<hr class="shadow p-3 mb-5 bg-white rounded"/>
+
+<div class="container">
+    <h4>This project was created for GENED 1080: How Music Works: Engineering the Acoustical World.</h4>
+    <br/>
+    <img src="/static/Gened1080Logo.jpg" alt="Gened 1080 Logo" width=60%>
+    <br/><br/>
+    <h5>Huge shoutout to Professor Wood and the rest of the teaching staff for creating such an awesome and instructive class!</h5>
+</div>
+
+<hr class="shadow p-3 mb-5 bg-white rounded"/>
+
+<div class="container">
+    <h4>
+        For more information about my personal background and coding projects, please click the image on the left to view my
+        <a href="https://lucaspingpao.github.io">personal portfolio website</a>.
+        For more of my music compositions and performances, please click the image on the right (and
+        <a href="https://www.youtube.com/channel/UCm0a7WR5C2684z6fL5XNodw?sub_confirmation=1">subscribe</a>
+        :) to my
+        <a href="https://www.youtube.com/channel/UCm0a7WR5C2684z6fL5XNodw">YouTube channel.</a>
+    </h4>
+    <br/><br/>
+
+    
+
+    <a href="https://lucaspingpao.github.io"><img src="/static/LucasPao.jpg" alt="Lucas Pao" width=30%></a>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <a href="https://www.youtube.com/channel/UCm0a7WR5C2684z6fL5XNodw"><img src="/static/YouTubeLogo.png" alt="Lucas Pao" width=30%></a>
+</div>
+
+<br/><br/>
+
+<hr class="shadow p-3 mb-5 bg-white rounded"/>
+
+{% endblock %}

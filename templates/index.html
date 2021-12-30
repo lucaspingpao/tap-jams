@@ -1,0 +1,527 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+
+
+{% block main %}
+
+<script>
+    var signal = new Audio();
+    function playAudio(source) {
+        signal.src = source;
+        signal.play();
+    }
+</script>
+    <hr cclass="shadow p-3 mb-5 bg-white rounded"/>  
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-1">PolySymph</h1>
+            <p class="lead">Music composition and experimentation reimagined.</p>
+            <button type="button" class="btn btn-outline-success"><a class="text-success" href="/#harmony">Harmony.</a></button>
+            <button type="button" class="btn btn-outline-success"><a class="text-success" href="/#melody">Melody.</a></button>
+            <button type="button" class="btn btn-outline-success"><a class="text-success" href="/#composition">Composition.</a></button>
+        </div>
+    </div>
+    <hr class="shadow p-3 mb-5 bg-white rounded"/>
+
+    <div class="container" class="text-center">
+        <div class="row">
+            <div class="col">
+                <h1 id="harmony" class="display-4">Play some Harmony!</h1>
+                😮Tap the keys and see what happens? 😮
+                <br/><br/>
+
+                <div class="shadow-lg p-3 mb-5 bg-white rounded" class="card-group" style="height: 300px; display: flex">
+
+                    <div onclick="playAudio('/static/audio/CMajor.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">C Major</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/DbMajor.mp3')" class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Db Major</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/DMajor.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">D Major</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/EbMajor.mp3')" class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Eb Major</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                    
+                    <div onclick="playAudio('/static/audio/EMajor.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">E Major</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/FMajor.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">F Major</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/GbMajor.mp3')" class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Gb Major</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/GMajor.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">G Major</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/AbMajor.mp3')" class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Ab Major</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/AMajor.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">A Major</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/BbMajor.mp3')" class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Bb Major</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/BMajor.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">B Major</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <form action="/" method="post">
+                    <div class="btn-group " data-toggle="buttons">
+                        <label for="harmony" class="btn btn-secondary">
+                            <input type="radio" name="harmony" id="option1" autocomplete="off" value="sine"> SineWave
+                        </label>
+                        <label for="harmony" class="btn btn-secondary">
+                            <input type="radio" name="harmony" id="option2" autocomplete="off" value="sawtooth"> Sawtooth
+                        </label>
+                        <label for="harmony" class="btn btn-secondary">
+                            <input type="radio" name="harmony" id="option3" autocomplete="off" value="trumpet"> Trumpet
+                        </label>
+                        <label for="harmony" class="btn btn-secondary">
+                            <input type="radio" name="harmony" id="option4" autocomplete="off" value="random"> Random
+                        </label>
+                    </div>
+                    <h4>Change your Synth:</h4>
+                    <h6>Feature coming soon! (Make your own composition below instead to hear the other synths!)</h6>
+                    <br/>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <hr class="shadow-lg p-3 mb-5 bg-white rounded"/>
+
+    <div class="container" class="text-center">
+        <div class="row">
+            <div class="col">
+                <h1 id="melody" class="display-4">Play some Melody!</h1>
+                😮Tap the keys and see what happens? 😮
+                <br/><br/>
+
+                <div class="shadow-lg p-3 mb-5 bg-white rounded" class="card-group" style="height: 300px; display: flex">
+
+                    <div onclick="playAudio('/static/audio/C.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">C</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/Db.mp3')" class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Db</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/D.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">D</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/Eb.mp3')" class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Eb</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                    
+                    <div onclick="playAudio('/static/audio/E.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">E</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/F.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">F</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/Gb.mp3')" class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Gb</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/G.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">G</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/Ab.mp3')" class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Ab</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/A.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">A</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/Bb.mp3')" class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Bb</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/B.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">B</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/Chigh.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">C</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/Dbhigh.mp3')" class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Db</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/Dhigh.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">D</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/Ebhigh.mp3')" class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Eb</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/Ehigh.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">E</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/Fhigh.mp3')" class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-header">F</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                    <div onclick="playAudio('/static/audio/Gbhigh.mp3')" class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Gb</div>
+                        <div class="card-body">
+                            <h6 class="card-title"></h6>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <form action="/" method="post">
+                    <div class="btn-group " data-toggle="buttons">
+                        <label for="melody" class="btn btn-secondary">
+                            <input type="radio" name="melody" id="option1" autocomplete="off" value="sine"> SineWave
+                        </label>
+                        <label for="melody" class="btn btn-secondary">
+                            <input type="radio" name="melody" id="option2" autocomplete="off" value="sawtooth"> Sawtooth
+                        </label>
+                        <label for="melody" class="btn btn-secondary">
+                            <input type="radio" name="melody" id="option3" autocomplete="off" value="trumpet"> Trumpet
+                        </label>
+                        <label for="melody" class="btn btn-secondary">
+                            <input type="radio" name="melody" id="option4" autocomplete="off" value="random"> Random
+                        </label>
+                    </div>
+                    <h4>Change your Synth:</h4>
+                    <h6>Feature coming soon! (Make your own composition below instead to hear the other synths!)</h6>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <hr class="shadow-lg p-3 mb-5 bg-white rounded"/>
+    <br/><br/><br/>
+    <h1 class="display-4">Play some Rhythms</h1>
+    <h6>🥁 Feature coming soon! 🥁</h6>
+    <br/><br/><br/>
+    
+    <hr class="shadow-lg p-3 mb-5 bg-white rounded"/>
+    <h1 id="composition" class="display-4"><strong>Compose your own song!</strong></h1><br/>
+    Type in the names of the notes (A,B,C,D,E,F,G) you want to add to your composition!
+    <br/>
+    For notes with accidentals, please provide the note as a flat, e.g. Gb is valid but F# is not.
+    <br/>
+    The numbers in the table header represent the place in the song, e.g. 2.3 is the 3rd beat of the 2nd measure.
+    <br/>
+    Choose your Synthesizer to create different types of sounds in the dropdown menu on the side!
+    <br/>
+    <h6>Feature coming soon: To combine quarter notes into longer notes, check the desired boxes and hit combine!</h6>
+
+    <div class="container" class="text-center">
+
+        <form action="/#composition" method="post"><br/>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                <th scope="col">Instrument</th>
+                <th scope="col">1.1</th>
+                <th scope="col">1.2</th>
+                <th scope="col">1.3</th>
+                <th scope="col">1.4</th>
+                <th scope="col">2.1</th>
+                <th scope="col">2.2</th>
+                <th scope="col">2.3</th>
+                <th scope="col">2.4</th>
+                <th scope="col">3.1</th>
+                <th scope="col">3.2</th>
+                <th scope="col">3.3</th>
+                <th scope="col">3.4</th>
+                <th scope="col">4.1</th>
+                <th scope="col">4.2</th>
+                <th scope="col">4.3</th>
+                <th scope="col">4.4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        Melody
+                        <select class="form-control-sm" id="melodyInstrument" name="melodyInstrument">
+                            <option value="sine">SineWave</option>
+                            <option value="sawtooth">Sawtooth</option>
+                            <option value="trumpet">Trumpet</option>
+                            <option value="random">Random</option>
+                        </select>
+                    </th>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m1b1" value="F"><input type="checkbox"></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m1b2" value="F"><input type="checkbox"></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m1b3" value="F"><input type="checkbox"></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m1b4" value="F"><input type="checkbox"></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m2b1" value="F"><input type="checkbox"></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m2b2" value="E"><input type="checkbox"></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m2b3" value="E"><input type="checkbox"></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m2b4" value="E"><input type="checkbox"></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m3b1" value="G"><input type="checkbox"></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m3b2" value="G"><input type="checkbox"></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m3b3" value="F"><input type="checkbox"></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m3b4" value="D"><input type="checkbox"></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m4b1" value="C"><input type="checkbox"></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m4b2" value="G"><input type="checkbox"></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m4b3" value="E"><input type="checkbox"></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="" style="width:40px" name="m4b4" value="C"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Harmony
+                        <select class="form-control-sm" id="harmonyInstrument" name="harmonyInstrument">
+                            <option value="sine">SineWave</option>
+                            <option value="sawtooth">Sawtooth</option>
+                            <option value="trumpet">Trumpet</option>
+                            <option value="random">Random</option>
+                        </select>
+                    </th>
+                    <td colspan="2">
+                        <input class="form-control form-control-sm" type="text" placeholder="e.g. A, Ab" name="m1b1Hnote" value="F">
+                        <select class="form-control" id="chords" name="m1b1Hchord">
+                            <option value="Major">Major</option>
+                            <option value="Minor">Minor</option>
+                        </select>
+                    </td>
+                    <td colspan="2">
+                        <input class="form-control form-control-sm" type="text" placeholder="e.g. A, Ab" name="m1b3Hnote" value="G">
+                        <select class="form-control" id="chords" name="m1b3Hchord">
+                            <option value="Major">Major</option>
+                            <option value="Minor">Minor</option>
+                        </select>
+                    </td>
+                    <td colspan="2">
+                        <input class="form-control form-control-sm" type="text" placeholder="e.g. A, Ab" name="m2b1Hnote" value="C">
+                        <select class="form-control" id="chords" name="m2b1Hchord">
+                            <option value="Major">Major</option>
+                            <option value="Minor">Minor</option>
+                        </select>
+                    </td>
+                    <td colspan="2">
+                        <input class="form-control form-control-sm" type="text" placeholder="e.g. A, Ab" name="m2b3Hnote" value="A">
+                        <select class="form-control" id="chords" name="m2b3Hchord">
+                            <option value="Major">Major</option>
+                            <option value="Minor">Minor</option>
+                        </select>
+                    </td>
+                    <td colspan="2">
+                        <input class="form-control form-control-sm" type="text" placeholder="e.g. A, Ab" name="m3b1Hnote" value="D">
+                        <select class="form-control" id="chords" name="m3b1Hchord">
+                            <option value="Major">Major</option>
+                            <option value="Minor">Minor</option>
+                        </select>
+                    </td>
+                    <td colspan="2">
+                        <input class="form-control form-control-sm" type="text" placeholder="Cb" name="m3b3Hnote" value="G">
+                        <select class="form-control" id="chords" name="m3b3Hchord">
+                            <option value="Major">Major</option>
+                            <option value="Minor">Minor</option>
+                        </select>
+                    </td>
+                    <td colspan="2">
+                        <input class="form-control form-control-sm" type="text" placeholder="Cb" name="m4b1Hnote" value="C">
+                        <select class="form-control" id="chords" name="m4b1Hchord">
+                            <option value="Major">Major</option>
+                            <option value="Minor">Minor</option>
+                        </select>
+                    </td>
+                    <td colspan="2">
+                        <input class="form-control form-control-sm" type="text" placeholder="Cb" name="m4b3Hnote" value="C">
+                        <select class="form-control" id="chords" name="m4b3Hchord">
+                            <option value="Major">Major</option>
+                            <option value="Minor">Minor</option>
+                        </select>
+                    </td>
+                        
+                </tr>
+            </tbody>
+        </table>
+        <br/><br/>
+
+            <h3>Title of your Song:</h3>
+            <div class="d-flex justify-content-center">
+                <input class="form-control form-control" type="text" placeholder="Song title: e.g. Jingle Bells" name="songTitle" value="Jingle Bells" style="max-width: 18rem">
+                <button class="btn btn-primary">Compose!</button>
+            </div>
+
+            <span style="color:red">{{error}}</span>
+        </form>
+        <br/><br/>
+
+        {% if not error %}
+            {% block content %}
+            <div class="container">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col">
+                        <h6>Feature coming soon!</h6>
+                        <button class="btn btn-primary">Download as MP3</button>
+                    </div>
+                    <div class="col">
+                        <h5>Hear {{title}} here!</h5>
+                        <audio controls src="/static/audio/mySong.mp3"></audio> 
+                    </div>
+                    
+                    <div class="col"></div>
+                </div>
+            </div>
+            {% endblock content %}
+        {% endif %}
+        <br/><br/>
+        
+    </div>
+    <hr class="shadow-lg p-3 mb-5 bg-white rounded"/>
+
+{% endblock %}
