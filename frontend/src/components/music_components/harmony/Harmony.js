@@ -1,10 +1,11 @@
 import React from 'react';
+import Piano from './Piano';
 
 function Harmony(props) {
     return (
         <div>
-            <h1>This page is under construction! ⚠️</h1>
-            <h2>Please check back later for more updates.</h2>
+            Click the piano keys to hear the sounds!
+            <Piano/>
         </div>
     );
 }

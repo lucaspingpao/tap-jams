@@ -1,0 +1,11 @@
+.controlBar {
+    position: absolute;
+    top: 80px;
+    right: 30px;
+}
+
+.buttonBar {
+    position: absolute;
+    top: 30px;
+    right: -10px;
+}

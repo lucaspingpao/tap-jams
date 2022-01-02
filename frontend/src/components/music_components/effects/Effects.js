@@ -1,10 +1,13 @@
 import React from 'react';
+import ContinuousSlider from '../../app_components/ContinuousSlider';
 
 function Effects(props) {
     return (
         <div>
-            <h1>This page is under construction! ⚠️</h1>
-            <h2>Please check back later for more updates.</h2>
+            <ContinuousSlider effect='Volume'/>
+            <ContinuousSlider effect='Tempo'/>
+            <ContinuousSlider effect='Frequency Filter'/>
+            <ContinuousSlider effect='Transpose Key'/>
         </div>
     );
 }

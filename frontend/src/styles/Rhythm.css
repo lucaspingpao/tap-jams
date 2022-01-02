@@ -1,0 +1,19 @@
+.drumHead {
+    border: 2px solid black;
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px gray;
+    padding: 50px;
+}
+
+.drumRack {
+    display: flex;
+    justify-content: space-between;
+}
+
+td, th {
+    border: 1px solid black;
+}
+
+.filled {
+    background-color: red;
+}

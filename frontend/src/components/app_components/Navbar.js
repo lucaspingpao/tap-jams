@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -30,9 +31,10 @@ export default function Navbar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            PolySymph 2
+            TapJams
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Link to='/login'><Button color="inherit">Login</Button></Link>
+          <Link to='/signup'><Button color="inherit">Sign Up</Button></Link>
         </Toolbar>
       </AppBar>
     </div>
