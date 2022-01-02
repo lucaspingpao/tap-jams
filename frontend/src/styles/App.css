@@ -6,3 +6,10 @@
   height: 40vmin;
   pointer-events: none;
 }
+
+.apitest {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  border: 2px solid red;
+}
