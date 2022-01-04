@@ -19,7 +19,7 @@ def serve():
 #@cross_origin
 def testing():
     return {
-        "testing the api works here ✅": "Heroku"
+        "testing the api works here": "Heroku"
     }
 
 @app.route('/rhythm', methods=['POST'])
