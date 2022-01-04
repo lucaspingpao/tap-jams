@@ -1,9 +1,11 @@
-from flask import Flask, jsonify, request
+from flask import Flask, request
+from flask_cors import CORS, cross_origin
 # from flask_sqlalchemy import SQLAlchemy
 import json
 from helpers import *
 
 app = Flask(__name__)
+cors = CORS(app)
 
 # app.config['SQLACHEMY_DATABASE_URI'] = 'mysql://root:''@localhost/flask'
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'mysql://root:''@localhost/flask'
