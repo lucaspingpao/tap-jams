@@ -5,7 +5,7 @@ import json
 from helpers import *
 
 app = Flask(__name__, static_folder='../frontend/build', static_url_path='')
-cors = CORS(app)
+#cors = CORS(app)
 
 # app.config['SQLACHEMY_DATABASE_URI'] = 'mysql://root:''@localhost/flask'
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'mysql://root:''@localhost/flask'
