@@ -18,8 +18,17 @@ function GlobalControls() {
                 aria-label="outlined primary button group"
                 className='buttonBar'
             >
-                
-                <Button><PlayCircleFilledIcon/></Button>
+                <Button 
+                    onClick = {async () => {
+                        const response = await fetch('/play', {
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify('')
+                        })
+                    }}
+                >
+                    <PlayCircleFilledIcon/>
+                </Button>
                 <Button><StopIcon/></Button>
                 <Button><SaveIcon/></Button>
             </ButtonGroup>

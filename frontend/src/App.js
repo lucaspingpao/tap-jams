@@ -13,11 +13,13 @@ function App() {
   // test the Flask API here
   const [testapi, setTestapi] = useState({});
   useEffect(() => {
-    fetch('/api').then(response => {
+    fetch('/api')
+    .then(response => {
       if (response.status == 200) {
         return response.json()
       }
-    }).then(data => setTestapi(data))
+    })
+    .then(data => setTestapi(data))
     .then(error => console.log(error))
   }, [])
 
