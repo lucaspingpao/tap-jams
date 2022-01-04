@@ -11,17 +11,18 @@ import { useState, useEffect } from 'react';
 function App() {
 
   // test the Flask API here
-  const [testapi, setTestapi] = useState({});
-  useEffect(() => {
-    fetch('/api')
-    .then(response => {
-      if (response.status == 200) {
-        return response.json()
-      }
-    })
-    .then(data => setTestapi(data))
-    .then(error => console.log(error))
-  }, [])
+  // const [testapi, setTestapi] = useState({});
+  // useEffect(() => {
+  //   fetch('/api')
+  //   .then(response => {
+  //     if (response.status == 200) {
+  //       return response.json()
+  //     }
+  //   })
+  //   .then(data => setTestapi(data))
+  //   .then(error => console.log(error))
+  // }, [])
+  // <div className='apitest'>{Object.keys(testapi)}</div>
 
   // return different comopnents
   return (
@@ -30,7 +31,6 @@ function App() {
       <Routes>
         <Route path='/' element={
           <div>
-            <div className='apitest'>{Object.keys(testapi)}</div>
             <Navbar/><Sidebar/><GlobalControls/>
           </div>
         }/>
