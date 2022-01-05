@@ -2,9 +2,9 @@ from flask import Flask, request, send_from_directory
 from flask_cors import CORS, cross_origin
 # from flask_sqlalchemy import SQLAlchemy
 import json
-from helpers import *
+from backend.helpers import *
 
-app = Flask(__name__, static_folder='../frontend/build', static_url_path='')
+app = Flask(__name__, static_folder='frontend/build', static_url_path='')
 cors = CORS(app)
 
 # app.config['SQLACHEMY_DATABASE_URI'] = 'mysql://root:''@localhost/flask'
