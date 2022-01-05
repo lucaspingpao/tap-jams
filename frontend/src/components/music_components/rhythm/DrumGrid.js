@@ -11,27 +11,14 @@ function DrumGrid(props) {
     }
 
     return (
-        <div>
+        <div className='drumGrid'>
             <table>
                 <thead>
                     <tr>
                         <th></th>
-                        <th>1.1</th>
-                        <th>1.2</th>
-                        <th>1.3</th>
-                        <th>1.4</th>
-                        <th>2.1</th>
-                        <th>2.2</th>
-                        <th>2.3</th>
-                        <th>2.4</th>
-                        <th>3.1</th>
-                        <th>3.2</th>
-                        <th>3.3</th>
-                        <th>3.4</th>
-                        <th>4.1</th>
-                        <th>4.2</th>
-                        <th>4.3</th>
-                        <th>4.4</th>
+                        {[...Array(16).keys()].map((index) =>
+                            <th key={index}>{index+1}</th>
+                        )}
                     </tr>
                 </thead>
                 <tbody>

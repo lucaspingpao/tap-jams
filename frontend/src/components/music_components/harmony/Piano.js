@@ -6,6 +6,7 @@ import { Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, InputLabel
 function Piano(props) {
     const [keyType, setKeyType] = React.useState('Major');
     const [chords, setChords] = React.useState(['GMajor', 'EMinor', 'CMajor', 'DMajor'])
+    const [currentlyPlaying, setCurrentlyPlaying] = React.useState();
 
     const handleChordChange = (i, e) => {
         let chordsCopy = [...chords];
@@ -51,9 +52,14 @@ function Piano(props) {
     );
 
     function playSound(keyName) {
+        if (currentlyPlaying) {
+            currentlyPlaying.pause();
+            currentlyPlaying.currentTime = 0;
+        }
         let flatKeyName = keyName.replace('C#', 'Db').replace('F#', 'Gb');
         const filename = './'.concat(flatKeyName).concat(keyType).concat('.wav');
         let audiofile = new Audio(soundsPiano[filename]);
+        setCurrentlyPlaying(audiofile);
         audiofile.play();
     }
 
@@ -104,6 +110,7 @@ function Piano(props) {
 
             <Button 
                 onClick = {async () => {
+                    console.log('clicked')
                     const response = await fetch('/harmony', {
                         method: 'POST',
                         headers: {'Content-Type': 'application/json'},

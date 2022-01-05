@@ -6,6 +6,8 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import '../../../styles/Rhythm.css';
 
+import Snare from '../../../assets/images/Snare.jpeg';
+
 function Drum(props) {
     const handleChange = (event) => {
         let soundsCopy = {...props.allSounds}
@@ -71,28 +73,30 @@ function Drum(props) {
     }
 
     return (
-        <div className='drumHead' onClick={(e) => playSound(props.allSounds[props.instrument], e)}>
-            <Box sx={{ minWidth: 120 }}>
-            <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">{props.instrument}</InputLabel>
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={props.allSounds[props.instrument]}
-                    label="Sound"
-                    onChange={handleChange}
-                >
-                {Object.keys(sounds[props.instrument]).map((sound, i) =>
-                    <MenuItem
-                        key={i}
-                        value={sound}
+        <div>
+            <div
+                className='drumHead'
+                id={props.instrument}
+                onClick={(e) => playSound(props.allSounds[props.instrument], e)}
+            >
+            </div>
+                <FormControl style={{width: '50%'}}>
+                    <InputLabel id="drum">{props.instrument}</InputLabel>
+                    <Select
+                        labelId="drum"
+                        id="demo-simple-select-helper"
+                        value={props.allSounds[props.instrument]}
+                        label="Sound"
+                        onChange={handleChange}
                     >
-                        {sound}
-                    </MenuItem>
-                )}
-                </Select>
-            </FormControl>
-            </Box>
+                        {Object.keys(sounds[props.instrument]).map((sound, i) =>
+                            <MenuItem key={i} value={sound}>
+                                {sound.replace('./', '').replace('.wav', '').replace(/([A-Z])/g, ' $1')}
+                                {/* strip prefix, suffix, and split each word */}
+                            </MenuItem>
+                        )}
+                    </Select>
+                </FormControl>
         </div>
     )
 }

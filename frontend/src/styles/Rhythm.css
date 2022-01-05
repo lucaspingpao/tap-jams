@@ -1,19 +1,65 @@
-.drumHead {
-    border: 2px solid black;
-    border-radius: 50%;
-    box-shadow: 5px 5px 5px gray;
-    padding: 50px;
+.rhythm {
+    text-align: center;
 }
+
+.drumHead {
+    border-radius: 50%;
+    height: 8vw;
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3vw;
+    margin: 2vw;
+    background-position: center;
+    
+}
+
+#Snare { background-image: url('../assets/images/Snare.jpeg'); background-size: 20vw; }
+#Hat { background-image: url('../assets/images/Hat.jpeg'); background-size: 16vw; }
+#Kick { background-image: url('../assets/images/Kick.jpg'); background-size: 16vw; }
+#Cymbal { background-image: url('../assets/images/Cymbal.jpg'); background-size: 15vw; }
 
 .drumRack {
     display: flex;
-    justify-content: space-between;
 }
 
 td, th {
-    border: 1px solid black;
+    box-shadow: 1px 1px 3px black;
+}
+
+.filled, .empty {
+    box-shadow: 2px 2px 2px darkgray;
+    width: 2vw;
+    height: 2vw;
+    border: 0.1px solid gray;
+}
+
+table {
+    border: 3px solid gray;
 }
 
 .filled {
-    background-color: red;
+    background-image: linear-gradient(to top right, limegreen , aqua);
+}
+
+.empty {
+    background-color: whitesmoke;
+}
+
+.filled:active, .empty:active {
+    box-shadow: 1px 1px 0.5px darkgray;
+}
+
+.localPlay {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5vw;
+}
+
+.drumGrid {
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

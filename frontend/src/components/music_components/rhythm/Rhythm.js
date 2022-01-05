@@ -2,12 +2,7 @@ import React, { useState } from 'react';
 import Drum from './Drum';
 import DrumGrid from './DrumGrid';
 import '../../../styles/Rhythm.css';
-import { Button } from '@material-ui/core';
-import Box from '@material-ui/core/Box';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import { Button, MenuItem, Select, Typography } from '@material-ui/core';
 
 function Rhythm(props) {
     const [filled, setFilled] = useState({
@@ -18,10 +13,10 @@ function Rhythm(props) {
     });
 
     const [sounds, setSounds] = useState({
-        'Hat': '',
-        'Snare': '',
-        'Kick': '',
-        'Cymbal': ''
+        'Hat': './ClosedHat.wav',
+        'Snare': './Snare.wav',
+        'Kick': './Kick.wav',
+        'Cymbal': './Boom.wav'
     });
 
     const [genre, setGenre] = useState('Rock')
@@ -42,8 +37,8 @@ function Rhythm(props) {
     }
 
     return (
-        <div>
-            <h3>Click on the drums to hear the sounds!</h3>
+        <div className='rhythm'>
+            <Typography variant='h5'>Click on the drums to hear the sounds!</Typography>
             <div className='drumRack'>
                 <Drum instrument='Hat' allSounds={sounds} setAllSounds={setSounds}/>
                 <Drum instrument='Snare' allSounds={sounds} setAllSounds={setSounds}/>
@@ -51,31 +46,13 @@ function Rhythm(props) {
                 <Drum instrument='Cymbal' allSounds={sounds} setAllSounds={setSounds}/>
             </div>
 
-            <br/>
-            <h3>Create your own drum pattern!</h3>
+            <br/><br/>
 
-            <DrumGrid filledSquares={filled} setFilled={setFilled}/>
-
-            <Button 
-                onClick = {async () => {
-                    const response = await fetch('/rhythm', {
-                        method: 'POST',
-                        headers: {'Content-Type': 'application/json'},
-                        body: JSON.stringify({sounds, filled})
-                    })
-                }}
-            >
-                Play Drum Pattern!
-            </Button>
-
-            <Box sx={{ minWidth: 120 }}>
-            <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Style</InputLabel>
+            <Typography variant='h5'>Create your own drum pattern!</Typography>
+            <div className='localPlay'>
                 <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
+                    className="select"
                     value={genre}
-                    label="Style"
                     onChange={(e) => setGenre(e.target.value)}
                 >
                 {Object.keys(genres).map((genre, i) =>
@@ -88,8 +65,23 @@ function Rhythm(props) {
                 )}
                 </Select>
                 <Button onClick={(e) => (setFilled(genres[genre]))}>Set Style!</Button>
-            </FormControl>
-            </Box>
+            </div>
+
+            <div>
+                <DrumGrid filledSquares={filled} setFilled={setFilled}/>
+            </div>
+            
+            <Button
+                onClick = {async () => {
+                    const response = await fetch('/rhythm', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({sounds, filled})
+                    })
+                }}
+            >
+                Play Drum Pattern!
+            </Button>
         </div>
     );
 }
