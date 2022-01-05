@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "proxy": "hhttps://tap-jams.herokuapp.com/",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.3",
@@ -43,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "http-server": "^14.0.0"
   }
 }
