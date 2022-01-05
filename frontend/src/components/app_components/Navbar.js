@@ -27,14 +27,17 @@ export default function Navbar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+        <Button color="inherit" href='/'>Compose</Button>
+        <Button color="inherit" href='/explore'>Explore</Button>
+          
+          {/*<IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
-          </IconButton>
+          </IconButton>*/}
           <Typography variant="h6" className={classes.title}>
             TapJams
           </Typography>
-          <Link to='/login'><Button color="inherit">Login</Button></Link>
-          <Link to='/signup'><Button color="inherit">Sign Up</Button></Link>
+          <Button color="inherit">Login</Button>
+          <Button color="inherit">Sign Up</Button>
         </Toolbar>
       </AppBar>
     </div>

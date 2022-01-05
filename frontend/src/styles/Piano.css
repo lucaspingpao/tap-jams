@@ -1,28 +1,79 @@
+.piano {
+    text-align: start;
+    padding-left: 10px;
+}
+
+.white, .black {
+    position: absolute;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
 .white {
-    border: 2px solid white;
-    background-color: white;
+    background-image: linear-gradient(to bottom left, white, rgb(240, 240, 240));
     color: black;
     height: 200px;
-    width: 50px;
+    width: 72px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.white:active {
+    background-image: linear-gradient(to top right, white, rgb(240, 240, 240));
 }
 
 .black {
-    border: 2px solid black;
-    background-image: linear-gradient(to top right, rgb(50, 50, 50), black);
+    background-image: linear-gradient(to bottom left, rgb(50, 50, 50), black);
     color: white;
     height: 100px;
-    width: 50px;
+    width: 42px;
     box-shadow: 2px 2px 5px gray;
+    z-index: 2;
 }
 
 .black:active {
-    background-image: linear-gradient(to bottom left, rgb(50, 50, 50), black);
+    background-image: linear-gradient(to top right, rgb(50, 50, 50), black);
 }
 
 .keys {
+    text-align: center;
+    text-justify: bottom;
+    position: relative;
+    height: 200px;
+    width: 508px;
     display: flex;
     direction: column;
     justify-content: center;
-    border: 2px solid black;
     box-shadow: 5px 5px 5px gray;
+    margin: 3vw;
+}
+
+.C { left: 0px; }
+.Db { left: 42px; }
+.D { left: 72px; }
+.Eb { left: 130px; }
+.E { left: 144px; }
+.F { left: 216px; }
+.Gb { left: 258px; }
+.G { left: 288px; }
+.Ab { left: 339px; }
+.A { left: 360px; }
+.Bb { left: 420px; }
+.B { left: 432px; }
+
+.chords {
+    display: flex;
+    align-items: center;
+}
+
+.chordProgression {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.playChords {
+    padding: 2vw;
 }

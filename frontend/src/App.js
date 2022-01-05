@@ -2,10 +2,10 @@ import './styles/App.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Navbar from './components/app_components/Navbar';
 import Sidebar from './components/app_components/Sidebar';
+import GlobalControls from './components/app_components/GlobalControls';
+import Explore from './components/app_components/Explore'
 import Login from './components/app_components/Login';
 import Signup from './components/app_components/Signup';
-import GlobalControls from './components/app_components/GlobalControls';
-
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -32,6 +32,11 @@ function App() {
         <Route path='/' element={
           <div>
             <Navbar/><Sidebar/><GlobalControls/>
+          </div>
+        }/>
+        <Route path='/explore' element={
+          <div>
+            <Navbar/><Explore/>
           </div>
         }/>
         <Route path='/login' element={

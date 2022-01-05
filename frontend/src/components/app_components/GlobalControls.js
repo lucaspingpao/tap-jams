@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ButtonGroup, Button } from '@material-ui/core';
 
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
@@ -9,30 +9,43 @@ import '../../styles/GlobalControls.css';
 
 
 function GlobalControls() {
+    const playButton = async () => {
+        setDisplaySave('');
+        const response = await fetch('/play', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify('')
+        })
+    }
+    const stopButton = () => {
+        setDisplaySave('')
+    }
+
+    const saveButton = () => {
+        setDisplaySave('Feature coming soon!')
+    }
+
+    const [displaySave, setDisplaySave] = useState(false);
+
     return (
         <div className='controlBar'>
-            <div>Global Controls</div>
-            <div>
-            <ButtonGroup
-                color="primary"
-                aria-label="outlined primary button group"
-                className='buttonBar'
-            >
-                <Button 
-                    onClick = {async () => {
-                        const response = await fetch('/play', {
-                            method: 'POST',
-                            headers: {'Content-Type': 'application/json'},
-                            body: JSON.stringify('')
-                        })
-                    }}
+            <div className='global'>Global Controls</div>
+                <ButtonGroup
+                    color="primary"
+                    aria-label="outlined primary button group"
+                    className='buttonBar'
                 >
-                    <PlayCircleFilledIcon/>
-                </Button>
-                <Button><StopIcon/></Button>
-                <Button><SaveIcon/></Button>
-            </ButtonGroup>
-            </div>
+                    <Button onClick = {playButton}>
+                        <PlayCircleFilledIcon/>
+                    </Button>
+                    <Button onClick = {stopButton}>
+                        <StopIcon/>
+                    </Button>
+                    <Button onClick = {saveButton}>
+                        <SaveIcon/>
+                    </Button>
+                </ButtonGroup>
+            <div className='feature'>{displaySave}</div>
         </div>
     )
 }

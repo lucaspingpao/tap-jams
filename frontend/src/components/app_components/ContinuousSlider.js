@@ -8,8 +8,11 @@ import VolumeUp from '@material-ui/icons/VolumeUp';
 
 const useStyles = makeStyles({
   root: {
-    width: 200,
+    width: 500,
   },
+  span: {
+    fontSize: 50
+  }
 });
 
 export default function ContinuousSlider(props) {
@@ -25,15 +28,15 @@ export default function ContinuousSlider(props) {
       <Typography id="continuous-slider" gutterBottom>
         {props.effect}
       </Typography>
-      <Grid container spacing={2}>
+      <Grid container spacing={3}>
         <Grid item>
-          <VolumeDown />
+          <span className={classes.span} role='img' aria-label={props.leftLabel}>{props.leftEmoji}</span>
         </Grid>
         <Grid item xs>
           <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />
         </Grid>
         <Grid item>
-          <VolumeUp />
+          <span className={classes.span} role='img' aria-label={props.rightLabel}>{props.rightEmoji}</span>
         </Grid>
       </Grid>
     </div>

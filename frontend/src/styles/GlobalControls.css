@@ -1,11 +1,21 @@
 .controlBar {
     position: absolute;
     top: 80px;
-    right: 30px;
+    right: 10px;
+}
+
+.global {
+    position: relative;
+    top: 0px;
 }
 
 .buttonBar {
-    position: absolute;
-    top: 30px;
-    right: -10px;
+    position: relative;
+    top: 8px;
+}
+
+.feature {
+    color: #f50057;
+    position: relative;
+    top: 10px;
 }

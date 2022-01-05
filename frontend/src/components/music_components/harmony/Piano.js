@@ -1,7 +1,8 @@
 import React from 'react'
 import '../../../styles/Piano.css';
-import { Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, InputLabel, Select, Button } from '@material-ui/core';
-
+import { Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, InputLabel, Select, Button, Typography, ButtonGroup } from '@material-ui/core';
+import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
+import SaveIcon from '@material-ui/icons/Save';
 
 function Piano(props) {
     const [keyType, setKeyType] = React.useState('Major');
@@ -16,12 +17,12 @@ function Piano(props) {
 
     const pianoKeys = {
         'C' : 'white',
-        'C#' : 'black',
+        'Db' : 'black',
         'D' : 'white',
         'Eb' : 'black',
         'E' : 'white',
         'F' : 'white',
-        'F#' : 'black',
+        'Gb' : 'black',
         'G' : 'white',
         'Ab' : 'black',
         'A' : 'white',
@@ -64,62 +65,73 @@ function Piano(props) {
     }
 
     return (
-        <div>
-            <div className='keys'>
-                {Object.keys(pianoKeys).map((pianoKey, i) =>
-                    <div
-                        key = {i}
-                        className = {pianoKeys[pianoKey]}
-                        onClick = {() => playSound(pianoKey)}
-                    >
-                        {pianoKey}
-                    </div>
-                )}
-            </div>
-
-<br/>
-
-            <FormControl component="fieldset">
-                <FormLabel component="legend"></FormLabel>
+        <div className='piano'>
+            <Typography variant='h5'>Click the piano keys to hear the sounds!</Typography>
+            <div className='chords'>
+                <div className='keys'>
+                    {Object.keys(pianoKeys).map((pianoKey, i) =>
+                        <div
+                            key = {i}
+                            className = {pianoKeys[pianoKey].concat(' ').concat(pianoKey)}
+                            onClick = {() => playSound(pianoKey)}
+                        >
+                            {pianoKey.replace('Db', 'C#').replace('Gb', 'F#')}
+                        </div>
+                    )}
+                </div>
                 <RadioGroup aria-label="keyType" name="keyType" value={keyType} onChange={(e) => setKeyType(e.target.value)}>
-                <FormControlLabel value="Major" control={<Radio />} label="Major" />
-                <FormControlLabel value="Minor" control={<Radio />} label="Minor" />
+                    <FormControlLabel value="Major" control={<Radio />} label="Major" />
+                    <FormControlLabel value="Minor" control={<Radio />} label="Minor" />
                 </RadioGroup>
-            </FormControl>
+            </div>
+            
+            <div className='chordProgression'>
+                <Typography variant='h5'>Create your own chord progression!</Typography>
 
-            {/* Create 4 copies of select buttons */}
-            {[...Array(4).keys()].map((index) => (
-                <FormControl variant="outlined" key={index}>
-                    <InputLabel htmlFor={"chord".concat(index.toString())}>Chord {index+1}</InputLabel>
-                    <Select
-                        native
-                        value={chords[index]}
-                        onChange={(e) => handleChordChange(index, e)}
-                        label="Chord"
-                        inputProps={{
-                            name: 'chord',
-                            id: "chord".concat(index.toString()),
-                        }}
-                    >
-                    {majorChords.concat(minorChords).map((musicKey, j) => (
-                        <option key={j} value={musicKey}>{musicKey}</option>
+                {/* Create 4 copies of select buttons */}
+                <div className='chords'>
+                    {[...Array(4).keys()].map((index) => (
+                        <FormControl variant="outlined" key={index}>
+                            <InputLabel htmlFor={"chord".concat(index.toString())}>Chord {index+1}</InputLabel>
+                            <Select
+                                native
+                                value={chords[index]}
+                                onChange={(e) => handleChordChange(index, e)}
+                                label="Chord"
+                                inputProps={{
+                                    name: 'chord',
+                                    id: "chord".concat(index.toString()),
+                                }}
+                            >
+                            {majorChords.concat(minorChords).map((musicKey, j) => (
+                                <option key={j} value={musicKey}>{musicKey}</option>
+                            ))}
+                            </Select>
+                        </FormControl>
                     ))}
-                    </Select>
-                </FormControl>
-            ))}
-
-            <Button 
-                onClick = {async () => {
-                    console.log('clicked')
-                    const response = await fetch('/harmony', {
-                        method: 'POST',
-                        headers: {'Content-Type': 'application/json'},
-                        body: JSON.stringify(chords)
-                    })
-                }}
-            >
-                Play Chords!
-            </Button>
+                <div className = 'playChords'>
+                    <ButtonGroup orientation='vertical' color="secondary" aria-label="outlined primary button group">
+                        <Button
+                            onClick = {async () => {
+                                console.log('clicked')
+                                const response = await fetch('/harmony', {
+                                    method: 'POST',
+                                    headers: {'Content-Type': 'application/json'},
+                                    body: JSON.stringify(chords)
+                                })
+                            }}
+                        >
+                            Play Chords {'\u00A0'}
+                            <PlayCircleFilledIcon color="secondary"/>
+                        </Button>
+                        <Button>
+                            Save Chords {'\u00A0'}
+                            <SaveIcon color="secondary"/>
+                        </Button>
+                    </ButtonGroup>
+                </div>
+                </div>
+            </div>
         </div>
     )
 }

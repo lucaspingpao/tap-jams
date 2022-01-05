@@ -1,0 +1,17 @@
+.effects {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    padding-top: 2vw;
+}
+
+.play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5vw;
+}

@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import Drum from './Drum';
 import DrumGrid from './DrumGrid';
 import '../../../styles/Rhythm.css';
-import { Button, MenuItem, Select, Typography } from '@material-ui/core';
+import { Button, ButtonGroup, MenuItem, Select, Typography } from '@material-ui/core';
+import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
+import SaveIcon from '@material-ui/icons/Save';
 
 function Rhythm(props) {
     const [filled, setFilled] = useState({
@@ -70,18 +72,27 @@ function Rhythm(props) {
             <div>
                 <DrumGrid filledSquares={filled} setFilled={setFilled}/>
             </div>
-            
-            <Button
-                onClick = {async () => {
-                    const response = await fetch('/rhythm', {
-                        method: 'POST',
-                        headers: {'Content-Type': 'application/json'},
-                        body: JSON.stringify({sounds, filled})
-                    })
-                }}
-            >
-                Play Drum Pattern!
-            </Button>
+
+            <ButtonGroup color="secondary" aria-label="outlined primary button group">
+                <Button
+                    onClick = {async () => {
+                        const response = await fetch('/rhythm', {
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify({sounds, filled})
+                        })
+                    }}
+                >
+                    Play Drum Pattern! {'\u00A0'}
+                    <PlayCircleFilledIcon color="secondary"/>
+                </Button>
+                <Button
+                
+                >
+                    Save Drum Pattern! {'\u00A0'}
+                    <SaveIcon color="secondary"/>
+                </Button>
+            </ButtonGroup>
         </div>
     );
 }

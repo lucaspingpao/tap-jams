@@ -12,7 +12,10 @@
     padding: 3vw;
     margin: 2vw;
     background-position: center;
-    
+}
+
+.drumHead:hover {
+    cursor: pointer;
 }
 
 #Snare { background-image: url('../assets/images/Snare.jpeg'); background-size: 20vw; }
@@ -40,7 +43,7 @@ table {
 }
 
 .filled {
-    background-image: linear-gradient(to top right, limegreen , aqua);
+    background-image: linear-gradient(to top left, #1769aa , #4dabf5);
 }
 
 .empty {
