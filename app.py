@@ -6,20 +6,20 @@ from flask_cors import CORS, cross_origin
 # from backend.helpers import *
 
 app = Flask(__name__, static_folder='frontend/build', static_url_path='')
-CORS(app)
+#CORS(app)
 
 # app.config['SQLACHEMY_DATABASE_URI'] = 'mysql://root:''@localhost/flask'
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'mysql://root:''@localhost/flask'
 
 @app.route('/api', methods=['GET'])
-@cross_origin
+#@cross_origin
 def testing():
     return {
         "testing the api works here": "Heroku"
     }
 
 @app.route('/')
-@cross_origin
+#@cross_origin
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
 
