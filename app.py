@@ -11,15 +11,15 @@ CORS(app)
 # app.config['SQLACHEMY_DATABASE_URI'] = 'mysql://root:''@localhost/flask'
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'mysql://root:''@localhost/flask'
 
-# @app.route('/api', methods=['GET'])
-# #@cross_origin
-# def testing():
-#     return {
-#         "testing the api works here": "Heroku"
-#     }
+@app.route('/api', methods=['GET'])
+@cross_origin()
+def testing():
+    return {
+        "testing the api works here": "Heroku"
+    }
 
-@app.route('/')
-@cross_origin
+@app.route('/', methods=['GET'])
+@cross_origin()
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
 
