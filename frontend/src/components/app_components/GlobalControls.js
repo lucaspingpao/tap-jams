@@ -5,17 +5,21 @@ import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import StopIcon from '@material-ui/icons/Stop';
 import SaveIcon from '@material-ui/icons/Save';
 
+import Song from '../../assets/sounds/test_mix.wav';
+
 import '../../styles/GlobalControls.css';
 
 
 function GlobalControls() {
     const playButton = async () => {
         setDisplaySave('');
-        const response = await fetch('/play', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify('')
-        })
+        let audiofile = new Audio(Song);
+        audiofile.play();
+        // const response = await fetch('/play', {
+        //     method: 'POST',
+        //     headers: {'Content-Type': 'application/json'},
+        //     body: JSON.stringify('')
+        // })
     }
     const stopButton = () => {
         setDisplaySave('')

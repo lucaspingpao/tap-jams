@@ -33,7 +33,7 @@ function Melody(props) {
                         aria-label="outlined primary button group"
                         className='buttonBar'
                     >
-                        <Button onClick = {playButton}>
+                        <Button onClick = {stopButton}>
                             <PlayCircleFilledIcon/>
                         </Button>
                         <Button onClick = {stopButton}>

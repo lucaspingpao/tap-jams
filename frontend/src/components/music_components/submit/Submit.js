@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, Button, Typography, FormControl } from '@material-ui/core';
 import '../../../styles/Submit.css';
-import Song from '../../../assets/sounds/test_drums.wav';
+import Song from '../../../assets/sounds/test_mix.wav';
 
 function Submit(props) {
     const [title, setTitle] = useState('');

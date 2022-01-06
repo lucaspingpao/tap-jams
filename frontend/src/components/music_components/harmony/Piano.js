@@ -1,8 +1,9 @@
 import React from 'react'
 import '../../../styles/Piano.css';
-import { Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, InputLabel, Select, Button, Typography, ButtonGroup } from '@material-ui/core';
+import { Radio, RadioGroup, FormControlLabel, FormControl, InputLabel, Select, Button, Typography, ButtonGroup } from '@material-ui/core';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import SaveIcon from '@material-ui/icons/Save';
+import Song from '../../../assets/sounds/test_piano.wav';
 
 function Piano(props) {
     const [keyType, setKeyType] = React.useState('Major');
@@ -64,6 +65,22 @@ function Piano(props) {
         audiofile.play();
     }
 
+    // calls Flask API (doesn't work yet)
+    const playChords = async () => {
+        const response = await fetch('/harmony', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(chords)
+        })
+    }
+
+    // plays wav file directly saved to assets
+    const playChordsManually = () => {
+        let audiofile = new Audio(Song);
+        audiofile.play();
+    }
+
+
     return (
         <div className='piano'>
             <Typography variant='h5'>Click the piano keys to hear the sounds!</Typography>
@@ -109,28 +126,22 @@ function Piano(props) {
                             </Select>
                         </FormControl>
                     ))}
-                <div className = 'playChords'>
-                    <ButtonGroup orientation='vertical' color="secondary" aria-label="outlined primary button group">
-                        <Button
-                            onClick = {async () => {
-                                console.log('clicked')
-                                const response = await fetch('/harmony', {
-                                    method: 'POST',
-                                    headers: {'Content-Type': 'application/json'},
-                                    body: JSON.stringify(chords)
-                                })
-                            }}
-                        >
-                            Play Chords {'\u00A0'}
-                            <PlayCircleFilledIcon color="secondary"/>
-                        </Button>
-                        <Button>
-                            Save Chords {'\u00A0'}
-                            <SaveIcon color="secondary"/>
-                        </Button>
-                    </ButtonGroup>
+                    <div className = 'playChords'>
+                        <ButtonGroup orientation='vertical' color="secondary" aria-label="outlined primary button group">
+                            <Button
+                                onClick={playChordsManually}
+                            >
+                                Play Chords {'\u00A0'}
+                                <PlayCircleFilledIcon color="secondary"/>
+                            </Button>
+                            <Button>
+                                Save Chords {'\u00A0'}
+                                <SaveIcon color="secondary"/>
+                            </Button>
+                        </ButtonGroup>
+                    </div>
                 </div>
-                </div>
+                <div className='feature'>Feature coming soon: use predictive algorithms to choose the best chords for your song!</div>
             </div>
         </div>
     )

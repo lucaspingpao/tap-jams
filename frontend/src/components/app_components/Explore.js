@@ -19,22 +19,22 @@ import '../../styles/Explore.css';
 
 const songData = [
     {
-        title: 'Song #1',
+        title: 'Cool Jams',
         composer: 'Drake',
         image: Drake
     },
     {
-        title: 'Song #2',
+        title: 'Fun Parties',
         composer: 'Olivia Rodrigo',
         image: Olivia
     },
     {
-        title: 'Song #3',
+        title: 'Happy Days',
         composer: 'Taylor Swift',
         image: Taylor
     },
     {
-        title: 'Song #4',
+        title: 'Exciting Times',
         composer: 'The Weeknd',
         image: Weeknd
     }

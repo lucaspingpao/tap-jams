@@ -5,12 +5,13 @@ import '../../../styles/Rhythm.css';
 import { Button, ButtonGroup, MenuItem, Select, Typography } from '@material-ui/core';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import SaveIcon from '@material-ui/icons/Save';
+import Song from '../../../assets/sounds/test_drums.wav';
 
 function Rhythm(props) {
     const [filled, setFilled] = useState({
         'Hat': '1111111111111111',
         'Snare': '0010001000100010',
-        'Kick': '1000100010001000',
+        'Kick': '1000010010000100',
         'Cymbal': '1000000000000000'
     });
 
@@ -27,15 +28,42 @@ function Rhythm(props) {
         'Rock': {
             'Hat': '1111111111111111',
             'Snare': '0010001000100010',
-            'Kick': '1000100010001000',
+            'Kick': '1000010010000100',
             'Cymbal': '1000000000000000'
         },
         'Jazz': {
-            'Hat': '1111111111111111',
+            'Hat': '1011101110111011',
             'Snare': '0010001000100010',
-            'Kick': '1000001010000010',
+            'Kick': '0010001000100010',
+            'Cymbal': '1000000000000000'
+        },
+        'Hip-Hop': {
+            'Hat': '1111111111111111',
+            'Snare': '0000100000001000',
+            'Kick': '1001000101010001',
+            'Cymbal': '1000000000000000'
+        },
+        'Latin': {
+            'Hat': '1111111111111111',
+            'Snare': '0001001000010010',
+            'Kick': '1000100010001000',
             'Cymbal': '1000000000000000'
         }
+    }
+
+    // calls Flask API (doesn't work yet)
+    const playDrums = async () => {
+        const response = await fetch('/rhythm', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({sounds, filled})
+        })
+    }
+
+    // plays wav file directly saved to assets
+    const playDrumsManually = () => {
+        let audiofile = new Audio(Song);
+        audiofile.play();
     }
 
     return (
@@ -75,13 +103,7 @@ function Rhythm(props) {
 
             <ButtonGroup color="secondary" aria-label="outlined primary button group">
                 <Button
-                    onClick = {async () => {
-                        const response = await fetch('/rhythm', {
-                            method: 'POST',
-                            headers: {'Content-Type': 'application/json'},
-                            body: JSON.stringify({sounds, filled})
-                        })
-                    }}
+                    onClick={playDrumsManually}
                 >
                     Play Drum Pattern! {'\u00A0'}
                     <PlayCircleFilledIcon color="secondary"/>

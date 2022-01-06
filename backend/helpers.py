@@ -39,6 +39,7 @@ def mix_chords(chords, measure_time):
     song.export('../frontend/src/assets/sounds/test_piano.wav', format='wav')
     return song
 
-#song = mix_drums(sample_song, 250)
-#play(song)
-#song.export('../frontend/src/assets/sounds/test_mix.wav', format='wav')
+# drums = AudioSegment.from_wav('../frontend/src/assets/sounds/test_drums.wav')
+# chords = AudioSegment.from_wav('../frontend/src/assets/sounds/test_piano.wav')
+# song = drums.overlay(chords)
+# song.export('../frontend/src/assets/sounds/test_mix.wav', format='wav')
