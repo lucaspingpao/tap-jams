@@ -27,8 +27,8 @@ export default function Navbar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-        <Link to='/'><Button color="inherit" href='/'>Compose</Button></Link>
-        <Link to='/explore'><Button color="inherit">Explore</Button></Link>
+        <Button color="inherit" component={Link} to="/">Compose</Button>
+        <Button color="inherit" component={Link} to="/explore">Explore</Button>
           
           {/*<IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
