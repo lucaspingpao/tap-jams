@@ -1,22 +1,21 @@
-from flask import Flask, request
-from flask.helpers import send_from_directory
+from flask import Flask, request, send_from_directory
 from flask_cors import CORS, cross_origin
 # from flask_sqlalchemy import SQLAlchemy
 # import json
 # from backend.helpers import *
 
 app = Flask(__name__, static_folder='frontend/build', static_url_path='')
-CORS(app)
+cors = CORS(app)
 
 # app.config['SQLACHEMY_DATABASE_URI'] = 'mysql://root:''@localhost/flask'
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'mysql://root:''@localhost/flask'
 
-# @app.route('/api', methods=['GET'])
-# @cross_origin()
-# def testing():
-#     return {
-#         "testing the api works here": "Heroku"
-#     }
+@app.route('/api', methods=['GET'])
+@cross_origin()
+def testing():
+    return {
+        "testing the api works here": "Heroku"
+    }
 
 @app.route('/')
 @cross_origin()
