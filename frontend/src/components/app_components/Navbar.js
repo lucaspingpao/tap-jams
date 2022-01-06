@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -27,8 +27,8 @@ export default function Navbar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-        <Button color="inherit" href='/'>Compose</Button>
-        <Button color="inherit" href='/explore'>Explore</Button>
+        <Link to='/'><Button color="inherit" href='/'>Compose</Button></Link>
+        <Link to='/explore'><Button color="inherit">Explore</Button></Link>
           
           {/*<IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
