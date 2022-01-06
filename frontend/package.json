@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "proxy": "hhttps://tap-jams.herokuapp.com/",
+  "proxy": "https://tap-jams.herokuapp.com/",
   "homepage": ".",
   "private": true,
   "dependencies": {
