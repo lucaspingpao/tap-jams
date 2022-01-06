@@ -6,7 +6,7 @@ import GlobalControls from './components/app_components/GlobalControls';
 import Explore from './components/app_components/Explore'
 import Login from './components/app_components/Login';
 import Signup from './components/app_components/Signup';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
 function App() {
 

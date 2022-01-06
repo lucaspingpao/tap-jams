@@ -6,14 +6,14 @@ import MicIcon from '@material-ui/icons/Mic';
 import { ButtonGroup, Button } from '@material-ui/core';
 
 function Melody(props) {
-    const playButton = async () => {
-        setDisplaySave('');
-        const response = await fetch('/play', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify('')
-        })
-    }
+    // const playButton = async () => {
+    //     setDisplaySave('');
+    //     const response = await fetch('/play', {
+    //         method: 'POST',
+    //         headers: {'Content-Type': 'application/json'},
+    //         body: JSON.stringify('')
+    //     })
+    // }
     const stopButton = () => {
         setDisplaySave('')
     }

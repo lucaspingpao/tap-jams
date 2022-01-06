@@ -28,8 +28,7 @@ function Piano(props) {
         'Ab' : 'black',
         'A' : 'white',
         'Bb' : 'black',
-        'B' : 'white',
-        'C' : 'white'
+        'B' : 'white'
     }
 
     const majorChords = Object.keys(pianoKeys).map((pianoKey) => (pianoKey.concat('Major')));
@@ -39,6 +38,7 @@ function Piano(props) {
         let sounds = {};
         r.keys().map((item, _index) => {
             sounds[item] = r(item);
+            return;
         });
         return sounds;
     }
@@ -66,13 +66,13 @@ function Piano(props) {
     }
 
     // calls Flask API (doesn't work yet)
-    const playChords = async () => {
-        const response = await fetch('/harmony', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(chords)
-        })
-    }
+    // const playChords = async () => {
+    //     const response = await fetch('/harmony', {
+    //         method: 'POST',
+    //         headers: {'Content-Type': 'application/json'},
+    //         body: JSON.stringify(chords)
+    //     })
+    // }
 
     // plays wav file directly saved to assets
     const playChordsManually = () => {

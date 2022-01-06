@@ -52,13 +52,13 @@ function Rhythm(props) {
     }
 
     // calls Flask API (doesn't work yet)
-    const playDrums = async () => {
-        const response = await fetch('/rhythm', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({sounds, filled})
-        })
-    }
+    // const playDrums = async () => {
+    //     const response = await fetch('/rhythm', {
+    //         method: 'POST',
+    //         headers: {'Content-Type': 'application/json'},
+    //         body: JSON.stringify({sounds, filled})
+    //     })
+    // }
 
     // plays wav file directly saved to assets
     const playDrumsManually = () => {

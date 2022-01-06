@@ -13,6 +13,7 @@ function Drum(props) {
         let sounds = {};
         r.keys().map((item, _index) => {
             sounds[item] = r(item);
+            return;
         });
         return sounds;
     }

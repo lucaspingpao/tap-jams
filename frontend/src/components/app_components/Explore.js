@@ -9,7 +9,6 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 
-import UserIcon from '../../assets/images/Icon.png';
 import Drake from '../../assets/images/Drake.jpg';
 import Olivia from '../../assets/images/Olivia.jpg';
 import Taylor from '../../assets/images/Taylor.jpg';

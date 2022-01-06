@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Typography, Button, ButtonGroup } from '@material-ui/core';
 import ContinuousSlider from '../../app_components/ContinuousSlider';
-import DiscreteSlider from '../../app_components/DiscreteSlider';
+// import DiscreteSlider from '../../app_components/DiscreteSlider';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import '../../../styles/Effects.css'
 
