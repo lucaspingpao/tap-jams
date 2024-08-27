@@ -1,8 +1,8 @@
 # tap-jams
 
-./frontend contains the React app
+./frontend React (JavaScript)
 
-./backend contains the Flask API to send data processed in Python to React
+./backend Node.js, Express.js, PostgreSQL
 
 to run the app, run
 
