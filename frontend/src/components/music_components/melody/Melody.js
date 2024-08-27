@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+// import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import StopIcon from '@material-ui/icons/Stop';
 import MicIcon from '@material-ui/icons/Mic';
@@ -40,7 +40,7 @@ function Melody(props) {
                             <StopIcon/>
                         </Button>
                         <Button onClick = {saveButton}>
-                            <FiberManualRecordIcon/>
+                            Record
                         </Button>
                         <Button onClick = {saveButton}>
                             <MicIcon/>

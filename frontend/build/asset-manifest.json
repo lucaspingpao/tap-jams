@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.ddeec808.css",
-    "main.js": "/static/js/main.53e7edc2.js",
-    "static/js/787.774729bc.chunk.js": "/static/js/787.774729bc.chunk.js",
+    "main.css": "/static/css/main.5074835c.css",
+    "main.js": "/static/js/main.9fc6e44e.js",
+    "static/js/453.891aeb82.chunk.js": "/static/js/453.891aeb82.chunk.js",
     "static/media/Boom.wav": "/static/media/Boom.94e77f67e7f7c5832a27.wav",
     "static/media/test_mix.wav": "/static/media/test_mix.bf9c59a573081a4249bc.wav",
     "static/media/test_drums.wav": "/static/media/test_drums.47c2d82bce0219273e79.wav",
@@ -43,12 +43,12 @@
     "static/media/Olivia.jpg": "/static/media/Olivia.21a8dd69da3efdfdad13.jpg",
     "static/media/Drake.jpg": "/static/media/Drake.15ef5015c49f66ea6df3.jpg",
     "index.html": "/index.html",
-    "main.ddeec808.css.map": "/static/css/main.ddeec808.css.map",
-    "main.53e7edc2.js.map": "/static/js/main.53e7edc2.js.map",
-    "787.774729bc.chunk.js.map": "/static/js/787.774729bc.chunk.js.map"
+    "main.5074835c.css.map": "/static/css/main.5074835c.css.map",
+    "main.9fc6e44e.js.map": "/static/js/main.9fc6e44e.js.map",
+    "453.891aeb82.chunk.js.map": "/static/js/453.891aeb82.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ddeec808.css",
-    "static/js/main.53e7edc2.js"
+    "static/css/main.5074835c.css",
+    "static/js/main.9fc6e44e.js"
   ]
 }

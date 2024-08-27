@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ButtonGroup, Button } from '@material-ui/core';
-
+import Sidebar from './Sidebar';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import StopIcon from '@material-ui/icons/Stop';
 import SaveIcon from '@material-ui/icons/Save';
@@ -21,6 +21,7 @@ function GlobalControls() {
         //     body: JSON.stringify('')
         // })
     }
+
     const stopButton = () => {
         setDisplaySave('')
     }
@@ -32,6 +33,7 @@ function GlobalControls() {
     const [displaySave, setDisplaySave] = useState(false);
 
     return (
+        <div><Sidebar/>
         <div className='controlBar'>
             <div className='global'>Global Controls</div>
                 <ButtonGroup
@@ -50,6 +52,7 @@ function GlobalControls() {
                     </Button>
                 </ButtonGroup>
             <div className='feature'>{displaySave}</div>
+        </div>
         </div>
     )
 }
