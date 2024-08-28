@@ -6,7 +6,7 @@ CREATE TABLE users(
     profile_pic BYTEA
 );
 
-CREATE TABLE posts(
+CREATE TABLE jams(
     post_id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(user_id) ON DELETE CASCADE,
     title VARCHAR(255) NOT NULL,

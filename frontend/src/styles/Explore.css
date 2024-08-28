@@ -1,12 +1,14 @@
 .cards {
+    text-align: center;
     margin: 5%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     column-gap: 5%;
     row-gap: 2vw;
     margin-top: 0%;
 }
 
 .title {
-    padding: 4vw;
+    text-align: center;
+    padding: 3vw;
 }

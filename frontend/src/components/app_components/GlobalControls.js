@@ -33,7 +33,6 @@ function GlobalControls() {
     const [displaySave, setDisplaySave] = useState(false);
 
     return (
-        <div><Sidebar/>
         <div className='controlBar'>
             <div className='global'>Global Controls</div>
                 <ButtonGroup
@@ -52,7 +51,6 @@ function GlobalControls() {
                     </Button>
                 </ButtonGroup>
             <div className='feature'>{displaySave}</div>
-        </div>
         </div>
     )
 }
