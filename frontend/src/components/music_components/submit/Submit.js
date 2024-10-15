@@ -12,13 +12,13 @@ function Submit(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        navigate('/explore')
         try {
           const response = await fetch("http://localhost:8000/post-jam", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ title, composer })
           });
+          navigate('/explore');
         } catch (error) {
           console.log(error.message);
         }
